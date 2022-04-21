@@ -8,6 +8,7 @@ function JokeCard(props) {
       <h2>{title}</h2>
       <p>{body}</p>
       <p>{category}</p>
+      <button>Delete</button>
     </div>
   );
 }
