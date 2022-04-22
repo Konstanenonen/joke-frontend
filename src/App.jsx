@@ -1,18 +1,19 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
-import JokeCard from './components/JokeCard';
+import Switch from './components/Switch';
 
 function App() {
   const [jokes, setJokes] = useState(null);
 
   useEffect(() => {
     fetch('https://joke-rest-api.herokuapp.com/api/getall')
-      .then(response => response.json())
-      .then(data => setJokes(data));
+      .then((response) => response.json())
+      .then((data) => setJokes(data));
   }, []);
 
   function makeCards() {
     return jokes.map((joke) => (
-      <JokeCard
+      <Switch
         id={joke._id}
         key={joke._id}
         title={joke.title}

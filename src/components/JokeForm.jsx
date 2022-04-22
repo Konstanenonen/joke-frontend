@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-function JokeCard(props) {
+function JokeForm(props) {
   const {
     id,
     title,
@@ -12,13 +12,14 @@ function JokeCard(props) {
 
   return (
     <div id={id}>
+      <h2>Form</h2>
       <h2>{title}</h2>
       <p>{body}</p>
       <p>{category}</p>
       <button type="button">Delete</button>
-      <button onClick={toggleEdit} type="button">Edit</button>
+      <button onClick={toggleEdit} type="button">Cancel Edit</button>
     </div>
   );
 }
 
-export default JokeCard;
+export default JokeForm;
