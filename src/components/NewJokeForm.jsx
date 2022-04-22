@@ -39,6 +39,11 @@ function NewJokeForm(props) {
       .post('https://joke-rest-api.herokuapp.com/api/add', `title=${joke.title}&category=${joke.category}&body=${joke.body}`)
       .then((response) => {
         console.log(response);
+        setJoke({
+          title: '',
+          category: 'Dad Joke',
+          body: '',
+        });
         fetchNewJokes();
       });
   }
@@ -60,7 +65,7 @@ function NewJokeForm(props) {
         <li>
           <label htmlFor="body">The Joke</label>
           <textarea
-            defaultValue={joke.body}
+            value={joke.body}
             onChange={changeBody}
             id="body"
             type="textfie"
@@ -71,7 +76,7 @@ function NewJokeForm(props) {
         <li>
           <label htmlFor="category">Category</label>
           <select
-            defaultValue={joke.category}
+            value={joke.category}
             onChange={changeCategory}
             id="category"
             type="select"
