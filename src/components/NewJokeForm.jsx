@@ -37,7 +37,10 @@ function NewJokeForm(props) {
 
     axios
       .post('https://joke-rest-api.herokuapp.com/api/add', `title=${joke.title}&category=${joke.category}&body=${joke.body}`)
-      .then(fetchNewJokes());
+      .then((response) => {
+        console.log(response);
+        fetchNewJokes();
+      });
   }
 
   return (

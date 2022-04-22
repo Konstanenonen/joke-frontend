@@ -15,8 +15,8 @@ function JokeCard(props) {
   function deletePost() {
     axios
       .delete(`https://joke-rest-api.herokuapp.com/api/delete/${id}`)
-      .then(() => {
-        console.log('Joke deleted');
+      .then((response) => {
+        console.log(response);
         fetchNewJokes();
       });
   }

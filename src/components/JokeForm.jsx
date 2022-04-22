@@ -53,7 +53,7 @@ function JokeForm(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Add a new joke</h2>
+      <h2>Edit the joke</h2>
       <ul>
         <li>
           <label htmlFor="title">Title</label>
@@ -90,8 +90,8 @@ function JokeForm(props) {
           </select>
         </li>
       </ul>
-      <button type="submit">Add Joke</button>
-      <button type="button" onClick={toggleEdit}>Cancel Edit</button>
+      <button type="submit">Save changes</button>
+      <button type="button" onClick={toggleEdit}>Cancel</button>
     </form>
   );
 }
