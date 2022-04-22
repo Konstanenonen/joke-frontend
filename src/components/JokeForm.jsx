@@ -16,7 +16,6 @@ function JokeForm(props) {
       <h2>{title}</h2>
       <p>{body}</p>
       <p>{category}</p>
-      <button type="button">Delete</button>
       <button onClick={toggleEdit} type="button">Cancel Edit</button>
     </div>
   );

@@ -9,6 +9,7 @@ function Switch(props) {
     title,
     category,
     body,
+    fetchNewJokes,
   } = props;
   const [isEdited, setIsEdited] = useState(false);
 
@@ -21,6 +22,7 @@ function Switch(props) {
           category={category}
           body={body}
           toggleEdit={() => setIsEdited((prevState) => !prevState)}
+          fetchNewJokes={fetchNewJokes}
         />
       ) : (
         <JokeCard
@@ -29,6 +31,7 @@ function Switch(props) {
           category={category}
           body={body}
           toggleEdit={() => setIsEdited((prevState) => !prevState)}
+          fetchNewJokes={fetchNewJokes}
         />
       )}
     </div>
