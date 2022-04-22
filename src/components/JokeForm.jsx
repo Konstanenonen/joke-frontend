@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import axios from 'axios';
+import React, { useState } from 'react';
 
 function JokeForm(props) {
   const {
@@ -8,16 +10,89 @@ function JokeForm(props) {
     category,
     body,
     toggleEdit,
+    fetchNewJokes,
   } = props;
+  const [joke, setJoke] = useState({
+    jokeTitle: title,
+    jokeCategory: category,
+    jokeBody: body,
+  });
+
+  function changeTitle(event) {
+    setJoke((prevState) => ({
+      ...prevState,
+      jokeTitle: event.target.value,
+    }));
+  }
+
+  function changeCategory(event) {
+    setJoke((prevState) => ({
+      ...prevState,
+      jokeCategory: event.target.value,
+    }));
+  }
+
+  function changeBody(event) {
+    setJoke((prevState) => ({
+      ...prevState,
+      jokeBody: event.target.value,
+    }));
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    axios
+      .put(`https://joke-rest-api.herokuapp.com/api/update/${id}`, `title=${joke.jokeTitle}&category=${joke.jokeCategory}&body=${joke.jokeBody}`)
+      .then((response) => {
+        console.log(response);
+        fetchNewJokes();
+        toggleEdit();
+      });
+  }
 
   return (
-    <div id={id}>
-      <h2>Form</h2>
-      <h2>{title}</h2>
-      <p>{body}</p>
-      <p>{category}</p>
-      <button onClick={toggleEdit} type="button">Cancel Edit</button>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <h2>Add a new joke</h2>
+      <ul>
+        <li>
+          <label htmlFor="title">Title</label>
+          <input
+            value={joke.jokeTitle}
+            onChange={changeTitle}
+            id="title"
+            type="text"
+            name="title"
+          />
+        </li>
+        <li>
+          <label htmlFor="body">The Joke</label>
+          <textarea
+            defaultValue={joke.jokeBody}
+            onChange={changeBody}
+            id="body"
+            type="textfie"
+            rows={10}
+            cols={50}
+          />
+        </li>
+        <li>
+          <label htmlFor="category">Category</label>
+          <select
+            defaultValue={joke.jokeCategory}
+            onChange={changeCategory}
+            id="category"
+            type="select"
+            name="category"
+          >
+            <option value="Dad Joke">Dad Joke</option>
+            <option value="Dark Humor">Dark Humor</option>
+          </select>
+        </li>
+      </ul>
+      <button type="submit">Add Joke</button>
+      <button type="button" onClick={toggleEdit}>Cancel Edit</button>
+    </form>
   );
 }
 
