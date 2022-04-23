@@ -22,7 +22,7 @@ function JokeCard(props) {
   }
 
   return (
-    <div id={id}>
+    <div className="joke-card" id={id}>
       <h2>{title}</h2>
       <p className="joke-text">{body}</p>
       <div className="bottom-items">

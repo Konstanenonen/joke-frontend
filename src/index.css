@@ -51,7 +51,6 @@ blockquote, q {
 
 .App {
 	height: 100vh;
-	border: 1px solid red;
 	display: grid;
 	grid: "nav nav" 1fr
 				"form-area joke-area" 6fr
@@ -81,6 +80,7 @@ blockquote, q {
 	grid-area: joke-area;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-auto-rows: 300px;
 	gap: 10px;
 }
 
@@ -88,7 +88,7 @@ blockquote, q {
 	border: 1px solid black;
 }
 
-.joke-container > div > div {
+.joke-card {
 	padding: 20px 5px 0 5px;
 	height: 100%;
 	display: flex;
@@ -116,13 +116,31 @@ blockquote, q {
 	justify-content: center;
 }
 
+.edit-form {
+	padding: 5px 5px 0 5px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.edit-form > h2 {
+	text-align: center;
+}
+
+.form-buttons {
+	display: flex;
+	justify-content: flex-end;
+}
+
 form > ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 form > ul > li {
   display: flex;
   flex-direction: column;
+	gap: 5px;
 }
