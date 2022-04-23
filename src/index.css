@@ -69,9 +69,6 @@ blockquote, q {
 .form-area {
 	border: 1px solid red;
 	grid-area: form-area;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .joke-container {
@@ -126,6 +123,19 @@ blockquote, q {
 
 .edit-form > h2 {
 	text-align: center;
+}
+
+.new-joke-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 10px;
+}
+
+.new-joke-form > h2 {
+	font-size: 1.5rem;
+	text-align: center;
+	margin: 25px 0;
 }
 
 .form-buttons {

@@ -49,7 +49,7 @@ function NewJokeForm(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="new-joke-form" onSubmit={handleSubmit}>
       <h2>Add a new joke</h2>
       <ul>
         <li>
@@ -86,7 +86,7 @@ function NewJokeForm(props) {
           </select>
         </li>
       </ul>
-      <button type="submit">Add Joke</button>
+      <button type="submit">Add</button>
     </form>
   );
 }
