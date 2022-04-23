@@ -70,7 +70,6 @@ function NewJokeForm(props) {
             id="body"
             type="textfie"
             rows={10}
-            cols={50}
           />
         </li>
         <li>

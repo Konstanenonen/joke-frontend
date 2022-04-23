@@ -8,7 +8,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	margin: 0;
 	padding: 0;
-	border: 1px solid red;
+	border: none;
 	outline: 0;
 	font-weight: inherit;
 	font-style: inherit;
@@ -46,29 +46,74 @@ blockquote, q {
 }
 
 * {
-  border: 1px solid red;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	box-sizing: border-box;
 }
 
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
+	height: 100vh;
+	border: 1px solid red;
+	display: grid;
+	grid: "nav nav" 1fr
+				"form-area joke-area" 6fr
+				"footer footer" 1fr
+				/ 1fr 4fr;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav {
+	border: 1px solid red;
+	grid-area: nav;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-area {
+	border: 1px solid red;
+	grid-area: form-area;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.joke-container {
+	padding: 20px;
+	border: 1px solid red;
+	grid-area: joke-area;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 10px;
+}
+
+.joke-container > div {
+	border: 1px solid black;
+}
+
+.joke-container > div > div {
+	padding: 20px 5px 0 5px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.joke-text {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.bottom-items {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;;
+}
+
+.footer {
+	border: 1px solid red;
+	grid-area: footer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 form > ul {

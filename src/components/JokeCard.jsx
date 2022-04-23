@@ -24,10 +24,14 @@ function JokeCard(props) {
   return (
     <div id={id}>
       <h2>{title}</h2>
-      <p>{body}</p>
-      <p>{category}</p>
-      <button onClick={deletePost} type="button">Delete</button>
-      <button onClick={toggleEdit} type="button">Edit</button>
+      <p className="joke-text">{body}</p>
+      <div className="bottom-items">
+        <p>{category}</p>
+        <div className="buttons">
+          <button onClick={toggleEdit} type="button">Edit</button>
+          <button onClick={deletePost} type="button">Delete</button>
+        </div>
+      </div>
     </div>
   );
 }

@@ -32,13 +32,18 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Joke App</h1>
+      <nav className="nav">
+        <h1>Joke App</h1>
+      </nav>
       <div className="form-area">
         <NewJokeForm fetchNewJokes={() => fetchNewJokes()} />
       </div>
-      <div className="joke-container">
+      <main className="joke-container">
         {jokes && makeCards()}
-      </div>
+      </main>
+      <footer className="footer">
+        <p>Made by Konsta Nenonen</p>
+      </footer>
     </div>
   );
 }
