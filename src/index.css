@@ -255,7 +255,7 @@ form > ul > li {
 @media screen and (max-width: 900px) {
 	.App {
 		grid: "nav" 150px
-					"form-area" 600px
+					"form-area" 650px
 					"footer" 120px
 					"joke-area" 1fr
 					/ 1fr;
