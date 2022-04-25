@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/joke-frontend/static/css/main.0f7fd2cb.css",
+    "main.css": "/joke-frontend/static/css/main.c75abb01.css",
     "main.js": "/joke-frontend/static/js/main.5a7fab0f.js",
     "index.html": "/joke-frontend/index.html",
-    "main.0f7fd2cb.css.map": "/joke-frontend/static/css/main.0f7fd2cb.css.map",
+    "main.c75abb01.css.map": "/joke-frontend/static/css/main.c75abb01.css.map",
     "main.5a7fab0f.js.map": "/joke-frontend/static/js/main.5a7fab0f.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f7fd2cb.css",
+    "static/css/main.c75abb01.css",
     "static/js/main.5a7fab0f.js"
   ]
 }
