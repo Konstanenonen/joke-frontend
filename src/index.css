@@ -174,7 +174,7 @@ form > ul > li {
 	gap: 5px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
 	.App {
 		grid: "nav" 100px
 					"form-area" 500px
