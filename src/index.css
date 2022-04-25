@@ -173,3 +173,22 @@ form > ul > li {
   flex-direction: column;
 	gap: 5px;
 }
+
+@media screen and (max-width: 700px) {
+	.App {
+		grid: "nav" 100px
+					"form-area" 500px
+					"footer" 100px
+					"joke-area" 1fr
+					/ 1fr;
+	}
+
+	.nav {
+		padding: 0 15px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+}
