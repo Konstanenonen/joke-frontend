@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react';
 import Switch from './components/Switch';
 import NewJokeForm from './components/NewJokeForm';
 import Nav from './components/Nav';
+import TagFilters from './components/TagFilters';
 
 function App() {
   const [jokes, setJokes] = useState(null);
   const [fetchAmount, setFetchAmount] = useState(1);
   const [jokeId, setJokeId] = useState(null);
+  const [category, setCategory] = useState(null);
 
   // For fetching all jokes from database
   useEffect(() => {
@@ -40,16 +42,18 @@ function App() {
 
   function makeCards() {
     if (Array.isArray(jokes)) {
-      return jokes.map((joke) => (
-        <Switch
-          id={joke._id}
-          key={joke._id}
-          title={joke.title}
-          category={joke.category}
-          body={joke.body}
-          fetchNewJokes={() => fetchNewJokes()}
-        />
-      ));
+      return jokes
+        .filter((joke) => joke.category === category || category === null)
+        .map((joke) => (
+          <Switch
+            id={joke._id}
+            key={joke._id}
+            title={joke.title}
+            category={joke.category}
+            body={joke.body}
+            fetchNewJokes={() => fetchNewJokes()}
+          />
+        ));
     }
     return (
       <Switch
@@ -69,11 +73,9 @@ function App() {
       <div className="form-area">
         <NewJokeForm fetchNewJokes={() => fetchNewJokes()} />
       </div>
-      <main className="joke-container">
-        {jokes && makeCards()}
-      </main>
+      <main className="joke-container">{jokes && makeCards(category)}</main>
       <footer className="footer">
-        <p>Made by Konsta Nenonen</p>
+        <TagFilters setCategory={setCategory} />
       </footer>
     </div>
   );
