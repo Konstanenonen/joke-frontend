@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import axios from 'axios';
+import pen from '../images/pen.png';
 
 function JokeCard(props) {
   const {
@@ -24,12 +25,15 @@ function JokeCard(props) {
   return (
     <div className="joke-card" id={id}>
       <h2>{title}</h2>
+      <button className="delete-button" onClick={deletePost} type="button">X</button>
       <p className="joke-text">{body}</p>
       <div className="bottom-items">
-        <p>{category}</p>
+        <p className="category">{category}</p>
         <div className="buttons">
-          <button onClick={toggleEdit} type="button">Edit</button>
-          <button onClick={deletePost} type="button">Delete</button>
+          <button className="edit-button" onClick={toggleEdit} type="button">
+            <img className="pen" src={pen} alt="A pen" />
+            Edit
+          </button>
         </div>
       </div>
     </div>
