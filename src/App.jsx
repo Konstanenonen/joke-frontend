@@ -12,7 +12,10 @@ function App() {
   // For fetching all jokes from database
   useEffect(() => {
     fetch('https://joke-rest-api.herokuapp.com/api/getall')
-      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
       .then((data) => setJokes(data));
   }, [fetchAmount]);
 
@@ -21,7 +24,10 @@ function App() {
     if (jokeId === null) return;
 
     fetch(`https://joke-rest-api.herokuapp.com/api/get/${jokeId}`)
-      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
       .then((data) => {
         setJokes(data);
         setJokeId(null);
@@ -31,8 +37,6 @@ function App() {
   function fetchNewJokes() {
     setFetchAmount((prevState) => prevState + 1);
   }
-
-  console.log(jokes);
 
   function makeCards() {
     if (Array.isArray(jokes)) {

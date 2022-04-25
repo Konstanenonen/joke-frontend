@@ -15,7 +15,8 @@ function Nav(props) {
 
   return (
     <nav className="nav">
-      <form onSubmit={searchById}>
+      <h1>Joke App</h1>
+      <form className="search-form" onSubmit={searchById}>
         <label htmlFor="id-search">Search by id</label>
         <input
           onChange={(event) => setSearchId(event.target.value)}
@@ -25,7 +26,6 @@ function Nav(props) {
         />
         <button type="submit">Search</button>
       </form>
-      <h1>Joke App</h1>
     </nav>
   );
 }

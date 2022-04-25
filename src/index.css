@@ -59,11 +59,12 @@ blockquote, q {
 }
 
 .nav {
+	padding: 0 50px;
 	border: 1px solid red;
 	grid-area: nav;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 }
 
 .form-area {
@@ -141,6 +142,12 @@ blockquote, q {
 .form-buttons {
 	display: flex;
 	justify-content: flex-end;
+}
+
+.search-form {
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 form > ul {
