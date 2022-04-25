@@ -72,7 +72,6 @@ function JokeForm(props) {
             onChange={changeBody}
             id="body"
             type="textfie"
-            className="joke-text"
             rows={5}
           />
         </li>
