@@ -74,7 +74,9 @@ function App() {
       <div className="form-area">
         <NewJokeForm fetchNewJokes={() => fetchNewJokes()} />
       </div>
-      <main className="joke-container">{jokes ? makeCards(category) : <FillerCards />}</main>
+      <main className="joke-container">
+        {jokes ? makeCards(category) : <FillerCards />}
+      </main>
       <footer className="footer">
         <TagFilters setCategory={setCategory} />
       </footer>
