@@ -4,6 +4,7 @@ import Switch from './components/Switch';
 import NewJokeForm from './components/NewJokeForm';
 import Nav from './components/Nav';
 import TagFilters from './components/TagFilters';
+import FillerCards from './components/FillerCards';
 
 function App() {
   const [jokes, setJokes] = useState(null);
@@ -73,7 +74,7 @@ function App() {
       <div className="form-area">
         <NewJokeForm fetchNewJokes={() => fetchNewJokes()} />
       </div>
-      <main className="joke-container">{jokes && makeCards(category)}</main>
+      <main className="joke-container">{jokes ? makeCards(category) : <FillerCards />}</main>
       <footer className="footer">
         <TagFilters setCategory={setCategory} />
       </footer>
