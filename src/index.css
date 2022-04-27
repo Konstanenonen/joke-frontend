@@ -129,6 +129,7 @@ button:hover {
 .joke-card > h2 {
 	font-size: 1.4rem;
 	border-bottom: 2px solid black;
+	letter-spacing: 0.5px;
 }
 
 .joke-text {
@@ -137,6 +138,7 @@ button:hover {
 	display: flex;
 	align-items: center;
 	margin: 0 40px;
+	letter-spacing: 2px;
 }
 
 .bottom-items {

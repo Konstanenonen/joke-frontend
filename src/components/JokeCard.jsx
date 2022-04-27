@@ -2,6 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import pen from '../images/pen.png';
+import Category from './Category';
 
 function JokeCard(props) {
   const {
@@ -28,7 +29,7 @@ function JokeCard(props) {
       <button className="delete-button" onClick={deletePost} type="button">X</button>
       <p className="joke-text">{body}</p>
       <div className="bottom-items">
-        <p className="category">{category}</p>
+        <Category category={category} />
         <div className="buttons">
           <button className="edit-button" onClick={toggleEdit} type="button">
             <img className="pen" src={pen} alt="A pen" />
