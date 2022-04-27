@@ -86,6 +86,7 @@ function JokeForm(props) {
           >
             <option value="Dad Joke">Dad Joke</option>
             <option value="Dark Humor">Dark Humor</option>
+            <option value="Knock-Knock Joke">Knock-Knock Joke</option>
           </select>
         </li>
       </ul>

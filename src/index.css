@@ -132,7 +132,7 @@ button:hover {
 }
 
 .joke-text {
-	font-size: 0.9rem;
+	font-size: 1.1rem;
 	flex: 1;
 	display: flex;
 	align-items: center;

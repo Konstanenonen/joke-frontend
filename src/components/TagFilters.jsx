@@ -17,6 +17,9 @@ function TagFilters(props) {
         <button onClick={() => setCategory('Dark Humor')} type="button">
           Dark Humor
         </button>
+        <button onClick={() => setCategory('Knock-Knock Joke')} type="button">
+          Knock-Knock Jokes
+        </button>
       </div>
     </div>
   );
