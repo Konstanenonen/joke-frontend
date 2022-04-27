@@ -81,9 +81,9 @@ function NewJokeForm(props) {
             type="select"
             name="category"
           >
-            <option value="Dad Joke">Dad Joke</option>
+            <option value="Dad Joke">Dad Jokes</option>
             <option value="Dark Humor">Dark Humor</option>
-            <option value="Knock-Knock Joke">Knock-Knock Joke</option>
+            <option value="Knock-Knock Joke">Knock-Knock Jokes</option>
           </select>
         </li>
       </ul>

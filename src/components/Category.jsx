@@ -8,7 +8,7 @@ function Category(props) {
     let color;
     switch (category) {
       case 'Dad Joke':
-        color = 'green';
+        color = 'darkgreen';
         break;
       case 'Dark Humor':
         color = 'black';
