@@ -127,12 +127,14 @@ button:hover {
 }
 
 .joke-card > h2 {
+	color: black;
 	font-size: 1.4rem;
 	border-bottom: 2px solid black;
 	letter-spacing: 0.5px;
 }
 
 .joke-text {
+	color: black;
 	font-size: 1.1rem;
 	flex: 1;
 	display: flex;
@@ -188,6 +190,7 @@ button:hover {
 
 .edit-form > h2 {
 	text-align: center;
+	color: black;
 }
 
 .new-joke-form {
@@ -229,6 +232,7 @@ button:hover {
 }
 
 .filter-container {
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -259,11 +263,15 @@ form > ul > li {
 	font-size: 1.5rem;
 }
 
+.theme-button {
+	margin: 20px;
+}
+
 @media screen and (max-width: 900px) {
 	.App {
 		grid: "nav" 150px
 					"form-area" 650px
-					"footer" 120px
+					"footer" 200px
 					"joke-area" 1fr
 					/ 1fr;
 	}
@@ -279,5 +287,13 @@ form > ul > li {
 
 	.search-form > label {
 		font-size: 0.8rem;
+	}
+
+	.footer {
+		flex-direction: column-reverse;
+	}
+
+	.filter-container {
+		justify-content: center;
 	}
 }

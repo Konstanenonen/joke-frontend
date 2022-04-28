@@ -11,6 +11,7 @@ function App() {
   const [fetchAmount, setFetchAmount] = useState(1);
   const [jokeId, setJokeId] = useState(null);
   const [category, setCategory] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
 
   // For fetching all jokes from database
   useEffect(() => {
@@ -68,16 +69,28 @@ function App() {
     );
   }
 
+  // Sets colors for darkmode if turned on
+  const styles = darkMode
+    ? { backgroundColor: '#161126', borderColor: 'white', color: 'white' }
+    : null;
+
   return (
     <div className="App">
-      <Nav setJokeId={setJokeId} />
-      <div className="form-area">
+      <Nav setJokeId={setJokeId} theme={styles} />
+      <div style={styles} className="form-area">
         <NewJokeForm fetchNewJokes={() => fetchNewJokes()} />
       </div>
-      <main className="joke-container">
+      <main style={styles} className="joke-container">
         {jokes ? makeCards(category) : <FillerCards />}
       </main>
-      <footer className="footer">
+      <footer style={styles} className="footer">
+        <button
+          type="button"
+          className="theme-button"
+          onClick={() => setDarkMode((prevState) => !prevState)}
+        >
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
         <TagFilters setCategory={setCategory} />
       </footer>
     </div>

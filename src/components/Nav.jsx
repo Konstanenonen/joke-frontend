@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 
 function Nav(props) {
-  const { setJokeId } = props;
+  const { setJokeId, theme } = props;
   const [searchId, setSearchId] = useState('');
 
   function searchById(event) {
@@ -14,7 +14,7 @@ function Nav(props) {
   }
 
   return (
-    <nav className="nav">
+    <nav style={theme} className="nav">
       <h1>Joke App</h1>
       <form className="search-form" onSubmit={searchById}>
         <label htmlFor="id-search">Search by id</label>
