@@ -63,6 +63,7 @@ function JokeForm(props) {
             id="title"
             type="text"
             name="title"
+            required
           />
         </li>
         <li>
@@ -73,6 +74,7 @@ function JokeForm(props) {
             id="body"
             type="textfie"
             rows={5}
+            required
           />
         </li>
         <li>
@@ -92,7 +94,9 @@ function JokeForm(props) {
       </ul>
       <div className="form-buttons">
         <button type="submit">Save changes</button>
-        <button type="button" onClick={toggleEdit}>Cancel</button>
+        <button type="button" onClick={toggleEdit}>
+          Cancel
+        </button>
       </div>
     </form>
   );

@@ -60,6 +60,7 @@ function NewJokeForm(props) {
             id="title"
             type="text"
             name="title"
+            required
           />
         </li>
         <li>
@@ -70,6 +71,7 @@ function NewJokeForm(props) {
             id="body"
             type="textfie"
             rows={10}
+            required
           />
         </li>
         <li>

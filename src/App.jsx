@@ -33,7 +33,15 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        setJokes(data);
+        if (data === 'System failure') {
+          setJokes({
+            title: 'Nothing found',
+            body: 'No joke matched the given id.',
+            category: 'nothing found',
+          });
+        } else {
+          setJokes(data);
+        }
         setJokeId(null);
       });
   }, [jokeId]);
@@ -76,7 +84,11 @@ function App() {
 
   return (
     <div className="App">
-      <Nav setJokeId={setJokeId} theme={styles} />
+      <Nav
+        setJokeId={setJokeId}
+        theme={styles}
+        fetchNewJokes={() => fetchNewJokes()}
+      />
       <div style={styles} className="form-area">
         <NewJokeForm fetchNewJokes={() => fetchNewJokes()} />
       </div>
