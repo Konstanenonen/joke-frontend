@@ -95,7 +95,7 @@ button:hover {
 }
 
 .joke-container {
-	background-color: rgb(169, 226, 226);
+	background-color: rgb(204, 238, 238);
 	padding: 20px;
 	border: 1px solid black;
 	grid-area: joke-area;
