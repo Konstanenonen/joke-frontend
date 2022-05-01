@@ -123,6 +123,8 @@ button:hover {
 
 .joke-card > .delete-button {
 	background-color: rgb(133, 15, 15);
+	width: 30px;
+	font-weight: bold;
 	color: white;
 	border: 1px solid black;
 	border-radius: 5px;
@@ -130,6 +132,11 @@ button:hover {
 	top: 3px;
 	right: 3px;
 }
+
+.joke-card > .delete-button:hover {
+	background-color: rgb(106, 12, 12);
+}
+
 
 .joke-card > h2 {
 	color: black;
