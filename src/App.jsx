@@ -5,6 +5,7 @@ import NewJokeForm from './components/NewJokeForm';
 import Nav from './components/Nav';
 import TagFilters from './components/TagFilters';
 import FillerCards from './components/FillerCards';
+import ThemeButton from './components/ThemeButton';
 
 function App() {
   const [jokes, setJokes] = useState(null);
@@ -96,13 +97,7 @@ function App() {
         {jokes ? makeCards(category) : <FillerCards />}
       </main>
       <footer style={styles} className="footer">
-        <button
-          type="button"
-          className="theme-button"
-          onClick={() => setDarkMode((prevState) => !prevState)}
-        >
-          {darkMode ? 'Light Mode' : 'Dark Mode'}
-        </button>
+        <ThemeButton setDarkMode={setDarkMode} darkMode={darkMode} />
         <TagFilters setCategory={setCategory} />
       </footer>
     </div>
