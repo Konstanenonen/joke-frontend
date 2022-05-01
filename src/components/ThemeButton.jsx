@@ -12,7 +12,11 @@ function ThemeButton(props) {
       className="theme-button"
       onClick={() => setDarkMode((prevState) => !prevState)}
     >
-      {darkMode ? <img height={20} src={bulb} alt="A light bulb" /> : <img height={20} src={moon} alt="A half moon" />}
+      {darkMode ? (
+        <img height={20} src={bulb} alt="A light bulb" />
+      ) : (
+        <img height={20} src={moon} alt="A half moon" />
+      )}
       {darkMode ? 'Light Mode' : 'Dark Mode'}
     </button>
   );
