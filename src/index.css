@@ -283,6 +283,36 @@ form > ul > li {
 	gap: 3px;
 }
 
+.delete-confirmation {
+	text-align: center;
+	color: black;
+	font-size: 1.2rem;
+	line-height: 25px;
+	height: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+}
+
+.confirmation-buttons {
+	display: flex;
+	gap: 20px;
+}
+
+.confirmation-buttons > button {
+	font-size: 1.1rem;
+}
+
+.confrim-delete-btn {
+	background-color: rgb(133, 15, 15);
+	color: white;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+
 @media screen and (max-width: 900px) {
 	.App {
 		grid: "nav" 150px

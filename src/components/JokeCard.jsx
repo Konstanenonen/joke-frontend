@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import pen from '../images/pen.png';
 import Category from './Category';
+import DeleteConfirmation from './DeleteConfirmation';
 
 function JokeCard(props) {
   const {
@@ -13,30 +13,42 @@ function JokeCard(props) {
     toggleEdit,
     fetchNewJokes,
   } = props;
-
-  function deletePost() {
-    axios
-      .delete(`https://joke-rest-api.herokuapp.com/api/delete/${id}`)
-      .then((response) => {
-        console.log(response);
-        fetchNewJokes();
-      });
-  }
+  const [showDelete, setShowDelete] = useState(false);
 
   return (
     <div className="joke-card" id={id}>
-      <h2>{title}</h2>
-      <button className="delete-button" onClick={deletePost} type="button">X</button>
-      <p className="joke-text">{body}</p>
-      <div className="bottom-items">
-        <Category category={category} />
-        <div className="buttons">
-          <button className="edit-button" onClick={toggleEdit} type="button">
-            <img className="pen" src={pen} alt="A pen" />
-            Edit
+      {showDelete ? (
+        <DeleteConfirmation
+          setShowDelete={setShowDelete}
+          id={id}
+          fetchNewJokes={fetchNewJokes}
+        />
+      ) : (
+        <>
+          <h2>{title}</h2>
+          <button
+            className="delete-button"
+            onClick={() => setShowDelete(true)}
+            type="button"
+          >
+            X
           </button>
-        </div>
-      </div>
+          <p className="joke-text">{body}</p>
+          <div className="bottom-items">
+            <Category category={category} />
+            <div className="buttons">
+              <button
+                className="edit-button"
+                onClick={toggleEdit}
+                type="button"
+              >
+                <img className="pen" src={pen} alt="A pen" />
+                Edit
+              </button>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
