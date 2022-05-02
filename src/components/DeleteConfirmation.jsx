@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import axios from 'axios';
+import priority from '../images/priority.png';
 
 function DeleteConfirmation(props) {
   const { setShowDelete, id, fetchNewJokes } = props;
@@ -25,6 +26,7 @@ function DeleteConfirmation(props) {
           No, go back
         </button>
       </div>
+      <img height={40} src={priority} alt="exclamation mark" />
     </div>
   );
 }

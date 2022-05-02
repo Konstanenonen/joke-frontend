@@ -147,6 +147,7 @@ button:hover {
 
 .joke-text {
 	color: black;
+	line-height: 25px;
 	font-size: 1.1rem;
 	flex: 1;
 	display: flex;
@@ -311,7 +312,6 @@ form > ul > li {
 	border: 1px solid black;
 	border-radius: 5px;
 }
-
 
 @media screen and (max-width: 900px) {
 	.App {
