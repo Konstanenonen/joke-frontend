@@ -3,11 +3,12 @@
 import React, { useContext } from 'react';
 import Switch from './Switch';
 import FillerCards from './FillerCards';
-import { ThemeContext } from '../Context';
+import { FontContext, ThemeContext } from '../Context';
 
 function MainArea(props) {
   const { jokes, category, fetchNewJokes } = props;
   const darkMode = useContext(ThemeContext);
+  const boringFont = useContext(FontContext);
 
   function makeCards() {
     if (Array.isArray(jokes)) {
@@ -41,8 +42,10 @@ function MainArea(props) {
     ? { backgroundColor: '#434454', borderColor: 'white', color: 'white' }
     : null;
 
+  const font = boringFont ? { fontFamily: 'Roboto' } : null;
+
   return (
-    <main style={styles} className="joke-container">
+    <main style={{ ...styles, ...font }} className="joke-container">
       {jokes ? makeCards(category) : <FillerCards />}
     </main>
   );

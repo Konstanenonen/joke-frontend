@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
-import { ThemeContext } from './Context';
+import { FontContext, ThemeContext } from './Context';
 import NewJokeForm from './components/NewJokeForm';
 import Nav from './components/Nav';
 import MainArea from './components/MainArea';
@@ -12,6 +12,7 @@ function App() {
   const [jokeId, setJokeId] = useState(null);
   const [category, setCategory] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const [boringFont, setBoringFont] = useState(false);
 
   // For fetching all jokes from database
   useEffect(() => {
@@ -52,16 +53,22 @@ function App() {
 
   return (
     <ThemeContext.Provider value={darkMode}>
-      <div className="App">
-        <Nav setJokeId={setJokeId} fetchNewJokes={() => fetchNewJokes()} />
-        <NewJokeForm fetchNewJokes={() => fetchNewJokes()} />
-        <MainArea
-          jokes={jokes}
-          category={category}
-          fetchNewJokes={() => fetchNewJokes()}
-        />
-        <Footer setDarkMode={setDarkMode} setCategory={setCategory} />
-      </div>
+      <FontContext.Provider value={boringFont}>
+        <div className="App">
+          <Nav setJokeId={setJokeId} fetchNewJokes={() => fetchNewJokes()} />
+          <NewJokeForm fetchNewJokes={() => fetchNewJokes()} />
+          <MainArea
+            jokes={jokes}
+            category={category}
+            fetchNewJokes={() => fetchNewJokes()}
+          />
+          <Footer
+            setDarkMode={setDarkMode}
+            setCategory={setCategory}
+            setBoringFont={setBoringFont}
+          />
+        </div>
+      </FontContext.Provider>
     </ThemeContext.Provider>
   );
 }
