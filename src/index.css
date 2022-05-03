@@ -79,6 +79,7 @@ button:hover {
 }
 
 .nav > h1 {
+	padding: 10px;
 	font-size: 2.5rem;
 }
 

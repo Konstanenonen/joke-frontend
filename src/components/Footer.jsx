@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import ThemeButton from './ThemeButton';
 import TagFilters from './TagFilters';
 import { FontContext, ThemeContext } from '../Context';
+import FontButton from './FontButton';
 
 function Footer(props) {
   const { setDarkMode, setCategory, setBoringFont } = props;
@@ -19,7 +20,7 @@ function Footer(props) {
   return (
     <footer style={{ ...styles, ...font }} className="footer">
       <ThemeButton setDarkMode={setDarkMode} />
-      <button style={font} type="button" onClick={() => setBoringFont((prevState) => !prevState)}>Set Boring</button>
+      <FontButton setBoringFont={setBoringFont} />
       <TagFilters setCategory={setCategory} />
     </footer>
   );
