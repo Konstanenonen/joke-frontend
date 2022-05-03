@@ -19,8 +19,10 @@ function Footer(props) {
 
   return (
     <footer style={{ ...styles, ...font }} className="footer">
-      <ThemeButton setDarkMode={setDarkMode} />
-      <FontButton setBoringFont={setBoringFont} />
+      <div style={styles} className="context-buttons">
+        <ThemeButton setDarkMode={setDarkMode} />
+        <FontButton setBoringFont={setBoringFont} />
+      </div>
       <TagFilters setCategory={setCategory} />
     </footer>
   );

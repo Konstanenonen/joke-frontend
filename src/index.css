@@ -182,7 +182,7 @@ button:hover {
 }
 
 .footer {
-	padding: 10px 0;
+	padding: 10px;
 	background-color: rgb(221, 176, 13);
 	border: 1px solid black;
 	grid-area: footer;
@@ -312,11 +312,18 @@ form > ul > li {
 	border-radius: 5px;
 }
 
+.context-buttons {
+	justify-content: center;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+}
+
 @media screen and (max-width: 900px) {
 	.App {
 		grid: "nav" 150px
 					"form-area" 650px
-					"footer" 200px
+					"footer" 400px
 					"joke-area" 1fr
 					/ 1fr;
 	}
@@ -340,5 +347,9 @@ form > ul > li {
 
 	.filter-container {
 		justify-content: center;
+	}
+
+	.context-buttons {
+		margin: 20px;
 	}
 }
