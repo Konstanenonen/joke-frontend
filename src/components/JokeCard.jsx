@@ -17,7 +17,9 @@ function JokeCard(props) {
   const [showDelete, setShowDelete] = useState(false);
   const darkMode = useContext(ThemeContext);
 
-  const styles = darkMode ? { backgroundColor: 'black', color: 'white', borderColor: 'white' } : null;
+  const styles = darkMode
+    ? { backgroundColor: 'black', color: 'white', borderColor: 'white' }
+    : null;
 
   return (
     <div style={styles} className="joke-card" id={id}>
@@ -37,7 +39,7 @@ function JokeCard(props) {
           >
             X
           </button>
-          <p style={styles} className="joke-text">{body}</p>
+          <p className="joke-text">{body}</p>
           <div className="bottom-items">
             <Category category={category} />
             <div className="buttons">

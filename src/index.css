@@ -140,14 +140,12 @@ button:hover {
 
 
 .joke-card > h2 {
-	color: black;
 	font-size: 1.4rem;
 	border-bottom: 2px solid black;
 	letter-spacing: 0.5px;
 }
 
 .joke-text {
-	color: black;
 	line-height: 25px;
 	font-size: 1.1rem;
 	flex: 1;
@@ -204,7 +202,6 @@ button:hover {
 
 .edit-form > h2 {
 	text-align: center;
-	color: black;
 }
 
 .new-joke-form {
