@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { FontContext } from '../Context';
 
 function JokeForm(props) {
   const {
@@ -17,6 +18,7 @@ function JokeForm(props) {
     jokeCategory: category,
     jokeBody: body,
   });
+  const boringFont = useContext(FontContext);
 
   function changeTitle(event) {
     setJoke((prevState) => ({
@@ -51,6 +53,8 @@ function JokeForm(props) {
       });
   }
 
+  const font = boringFont ? { fontFamily: 'Roboto', fontWeight: 'bold' } : null;
+
   return (
     <form className="edit-form" onSubmit={handleSubmit}>
       <h2>Edit the joke</h2>
@@ -63,6 +67,7 @@ function JokeForm(props) {
             id="title"
             type="text"
             name="title"
+            style={font}
             required
           />
         </li>
@@ -74,6 +79,7 @@ function JokeForm(props) {
             id="body"
             type="textfie"
             rows={5}
+            style={font}
             required
           />
         </li>
@@ -85,16 +91,17 @@ function JokeForm(props) {
             id="category"
             type="select"
             name="category"
+            style={font}
           >
-            <option value="Dad Joke">Dad Jokes</option>
-            <option value="Dark Humor">Dark Humor</option>
-            <option value="Knock-Knock Joke">Knock-Knock Jokes</option>
+            <option value="Dad Joke" style={font}>Dad Jokes</option>
+            <option value="Dark Humor" style={font}>Dark Humor</option>
+            <option value="Knock-Knock Joke" style={font}>Knock-Knock Jokes</option>
           </select>
         </li>
       </ul>
       <div className="form-buttons">
-        <button type="submit">Save changes</button>
-        <button type="button" onClick={toggleEdit}>
+        <button style={font} type="submit">Save changes</button>
+        <button style={font} type="button" onClick={toggleEdit}>
           Cancel
         </button>
       </div>

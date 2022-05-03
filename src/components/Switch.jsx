@@ -16,7 +16,7 @@ function Switch(props) {
   const darkMode = useContext(ThemeContext);
 
   const styles = darkMode
-    ? { backgroundColor: 'black', color: 'white', borderColor: 'white' }
+    ? { backgroundColor: '#01020a', color: 'white', borderColor: 'white' }
     : null;
 
   return (

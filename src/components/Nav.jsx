@@ -3,12 +3,13 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/prop-types */
 import React, { useContext, useState } from 'react';
-import { ThemeContext } from '../Context';
+import { FontContext, ThemeContext } from '../Context';
 
 function Nav(props) {
   const { setJokeId, fetchNewJokes } = props;
   const [searchId, setSearchId] = useState('');
   const darkMode = useContext(ThemeContext);
+  const boringFont = useContext(FontContext);
 
   function searchById(event) {
     event.preventDefault();
@@ -22,8 +23,10 @@ function Nav(props) {
     ? { backgroundColor: '#161126', borderColor: 'white', color: 'white' }
     : null;
 
+  const font = boringFont ? { fontFamily: 'Roboto', fontWeight: 'bold' } : null;
+
   return (
-    <nav style={styles} className="nav">
+    <nav style={{ ...styles, ...font }} className="nav">
       <h1 onClick={fetchNewJokes}>Joke App</h1>
       <form className="search-form" onSubmit={searchById}>
         <label htmlFor="id-search">Search by id</label>
@@ -32,9 +35,10 @@ function Nav(props) {
           value={searchId}
           type="search"
           id="id-search"
+          style={font}
           required
         />
-        <button type="submit">Search</button>
+        <button style={font} type="submit">Search</button>
       </form>
     </nav>
   );

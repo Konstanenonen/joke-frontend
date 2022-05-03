@@ -2,11 +2,12 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
 import priority from '../images/priority.png';
-import { ThemeContext } from '../Context';
+import { FontContext, ThemeContext } from '../Context';
 
 function DeleteConfirmation(props) {
   const { setShowDelete, id, fetchNewJokes } = props;
   const darkMode = useContext(ThemeContext);
+  const boringFont = useContext(FontContext);
 
   function deletePost() {
     axios
@@ -18,17 +19,19 @@ function DeleteConfirmation(props) {
   }
 
   const styles = darkMode
-    ? { backgroundColor: 'black', color: 'white' }
+    ? { backgroundColor: '#01020a', color: 'white' }
     : null;
+
+  const font = boringFont ? { fontFamily: 'Roboto', fontWeight: 'bold' } : null;
 
   return (
     <div style={styles} className="delete-confirmation">
       <h2>{`Do you want to delete the joke with id: ${id}`}</h2>
       <div className="confirmation-buttons">
-        <button onClick={deletePost} className="confrim-delete-btn" type="button">
+        <button style={font} onClick={deletePost} className="confrim-delete-btn" type="button">
           Yes, delete
         </button>
-        <button onClick={() => setShowDelete(false)} type="button">
+        <button style={font} onClick={() => setShowDelete(false)} type="button">
           No, go back
         </button>
       </div>

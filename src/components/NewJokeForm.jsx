@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
-import { ThemeContext } from '../Context';
+import { FontContext, ThemeContext } from '../Context';
 
 function NewJokeForm(props) {
   const { fetchNewJokes } = props;
@@ -12,6 +12,7 @@ function NewJokeForm(props) {
     body: '',
   });
   const darkMode = useContext(ThemeContext);
+  const boringFont = useContext(FontContext);
 
   function changeTitle(event) {
     setJoke((prevState) => ({
@@ -55,8 +56,10 @@ function NewJokeForm(props) {
     ? { backgroundColor: '#161126', borderColor: 'white', color: 'white' }
     : null;
 
+  const font = boringFont ? { fontFamily: 'Roboto', fontWeight: 'bold' } : null;
+
   return (
-    <div style={styles} className="form-area">
+    <div style={{ ...styles, ...font }} className="form-area">
       <form className="new-joke-form" onSubmit={handleSubmit}>
         <h2>Add a new joke</h2>
         <ul>
@@ -68,6 +71,7 @@ function NewJokeForm(props) {
               id="title"
               type="text"
               name="title"
+              style={font}
               required
             />
           </li>
@@ -79,6 +83,7 @@ function NewJokeForm(props) {
               id="body"
               type="textfie"
               rows={10}
+              style={font}
               required
             />
           </li>
@@ -90,14 +95,15 @@ function NewJokeForm(props) {
               id="category"
               type="select"
               name="category"
+              style={font}
             >
-              <option value="Dad Joke">Dad Jokes</option>
-              <option value="Dark Humor">Dark Humor</option>
-              <option value="Knock-Knock Joke">Knock-Knock Jokes</option>
+              <option style={font} value="Dad Joke">Dad Jokes</option>
+              <option style={font} value="Dark Humor">Dark Humor</option>
+              <option style={font} value="Knock-Knock Joke">Knock-Knock Jokes</option>
             </select>
           </li>
         </ul>
-        <button type="submit">Add</button>
+        <button style={font} type="submit">Add</button>
       </form>
     </div>
   );

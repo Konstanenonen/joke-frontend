@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { FontContext } from '../Context';
 
 function TagFilters(props) {
   const { setCategory } = props;
   const [activeFilter, setActiveFilter] = useState(null);
+  const boringFont = useContext(FontContext);
 
   function handleClick(category) {
     setCategory(category);
@@ -16,35 +18,37 @@ function TagFilters(props) {
     border: '1px solid black',
   };
 
+  const font = boringFont ? { fontFamily: 'Roboto', fontWeight: 'bold' } : null;
+
   return (
-    <div className="filter-container">
+    <div style={font} className="filter-container">
       <h2>Select Category</h2>
       <div className="button-container">
         <button
           onClick={() => handleClick(null)}
           type="button"
-          style={activeFilter === null ? styles : null}
+          style={activeFilter === null ? { ...styles, ...font } : font}
         >
           All Jokes
         </button>
         <button
           onClick={() => handleClick('Dad Joke')}
           type="button"
-          style={activeFilter === 'Dad Joke' ? styles : null}
+          style={activeFilter === 'Dad Joke' ? { ...styles, ...font } : font}
         >
           Dad Jokes
         </button>
         <button
           onClick={() => handleClick('Dark Humor')}
           type="button"
-          style={activeFilter === 'Dark Humor' ? styles : null}
+          style={activeFilter === 'Dark Humor' ? { ...styles, ...font } : font}
         >
           Dark Humor
         </button>
         <button
           onClick={() => handleClick('Knock-Knock Joke')}
           type="button"
-          style={activeFilter === 'Knock-Knock Joke' ? styles : null}
+          style={activeFilter === 'Knock-Knock Joke' ? { ...styles, ...font } : font}
         >
           Knock-Knock Jokes
         </button>

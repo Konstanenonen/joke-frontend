@@ -42,7 +42,7 @@ function MainArea(props) {
     ? { backgroundColor: '#434454', borderColor: 'white', color: 'white' }
     : null;
 
-  const font = boringFont ? { fontFamily: 'Roboto' } : null;
+  const font = boringFont ? { fontFamily: 'Roboto', fontWeight: 'bold' } : null;
 
   return (
     <main style={{ ...styles, ...font }} className="joke-container">

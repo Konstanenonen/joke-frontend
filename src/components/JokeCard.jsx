@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useContext, useState } from 'react';
-import { ThemeContext } from '../Context';
+import { FontContext, ThemeContext } from '../Context';
 import pen from '../images/pen.png';
 import Category from './Category';
 import DeleteConfirmation from './DeleteConfirmation';
@@ -16,10 +16,13 @@ function JokeCard(props) {
   } = props;
   const [showDelete, setShowDelete] = useState(false);
   const darkMode = useContext(ThemeContext);
+  const boringFont = useContext(FontContext);
 
   const styles = darkMode
-    ? { backgroundColor: 'black', color: 'white', borderColor: 'white' }
+    ? { backgroundColor: '#01020a', color: 'white', borderColor: 'white' }
     : null;
+
+  const font = boringFont ? { fontFamily: 'Roboto', fontWeight: 'bold' } : null;
 
   return (
     <div style={styles} className="joke-card" id={id}>
@@ -47,6 +50,7 @@ function JokeCard(props) {
                 className="edit-button"
                 onClick={toggleEdit}
                 type="button"
+                style={font}
               >
                 <img className="pen" src={pen} alt="A pen" />
                 Edit
