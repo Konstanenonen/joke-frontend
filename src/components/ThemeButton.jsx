@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import bulb from '../images/bulb.png';
 import moon from '../images/moon.png';
+import { ThemeContext } from '../Context';
 
 function ThemeButton(props) {
-  const { setDarkMode, darkMode } = props;
+  const { setDarkMode } = props;
+  const darkMode = useContext(ThemeContext);
 
   return (
     <button

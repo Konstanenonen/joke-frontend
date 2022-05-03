@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ThemeContext } from '../Context';
 
 function NewJokeForm(props) {
   const { fetchNewJokes } = props;
@@ -10,6 +11,7 @@ function NewJokeForm(props) {
     category: 'Dad Joke',
     body: '',
   });
+  const darkMode = useContext(ThemeContext);
 
   function changeTitle(event) {
     setJoke((prevState) => ({
@@ -48,49 +50,56 @@ function NewJokeForm(props) {
       });
   }
 
+  // Sets colors for darkmode if turned on
+  const styles = darkMode
+    ? { backgroundColor: '#161126', borderColor: 'white', color: 'white' }
+    : null;
+
   return (
-    <form className="new-joke-form" onSubmit={handleSubmit}>
-      <h2>Add a new joke</h2>
-      <ul>
-        <li>
-          <label htmlFor="title">Title</label>
-          <input
-            value={joke.title}
-            onChange={changeTitle}
-            id="title"
-            type="text"
-            name="title"
-            required
-          />
-        </li>
-        <li>
-          <label htmlFor="body">The Joke</label>
-          <textarea
-            value={joke.body}
-            onChange={changeBody}
-            id="body"
-            type="textfie"
-            rows={10}
-            required
-          />
-        </li>
-        <li>
-          <label htmlFor="category">Category</label>
-          <select
-            value={joke.category}
-            onChange={changeCategory}
-            id="category"
-            type="select"
-            name="category"
-          >
-            <option value="Dad Joke">Dad Jokes</option>
-            <option value="Dark Humor">Dark Humor</option>
-            <option value="Knock-Knock Joke">Knock-Knock Jokes</option>
-          </select>
-        </li>
-      </ul>
-      <button type="submit">Add</button>
-    </form>
+    <div style={styles} className="form-area">
+      <form className="new-joke-form" onSubmit={handleSubmit}>
+        <h2>Add a new joke</h2>
+        <ul>
+          <li>
+            <label htmlFor="title">Title</label>
+            <input
+              value={joke.title}
+              onChange={changeTitle}
+              id="title"
+              type="text"
+              name="title"
+              required
+            />
+          </li>
+          <li>
+            <label htmlFor="body">The Joke</label>
+            <textarea
+              value={joke.body}
+              onChange={changeBody}
+              id="body"
+              type="textfie"
+              rows={10}
+              required
+            />
+          </li>
+          <li>
+            <label htmlFor="category">Category</label>
+            <select
+              value={joke.category}
+              onChange={changeCategory}
+              id="category"
+              type="select"
+              name="category"
+            >
+              <option value="Dad Joke">Dad Jokes</option>
+              <option value="Dark Humor">Dark Humor</option>
+              <option value="Knock-Knock Joke">Knock-Knock Jokes</option>
+            </select>
+          </li>
+        </ul>
+        <button type="submit">Add</button>
+      </form>
+    </div>
   );
 }
 
