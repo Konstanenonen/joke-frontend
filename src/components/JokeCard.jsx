@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ThemeContext } from '../Context';
 import pen from '../images/pen.png';
 import Category from './Category';
 import DeleteConfirmation from './DeleteConfirmation';
@@ -14,9 +15,12 @@ function JokeCard(props) {
     fetchNewJokes,
   } = props;
   const [showDelete, setShowDelete] = useState(false);
+  const darkMode = useContext(ThemeContext);
+
+  const styles = darkMode ? { backgroundColor: 'black', color: 'white', borderColor: 'white' } : null;
 
   return (
-    <div className="joke-card" id={id}>
+    <div style={styles} className="joke-card" id={id}>
       {showDelete ? (
         <DeleteConfirmation
           setShowDelete={setShowDelete}
@@ -25,7 +29,7 @@ function JokeCard(props) {
         />
       ) : (
         <>
-          <h2>{title}</h2>
+          <h2 style={styles}>{title}</h2>
           <button
             className="delete-button"
             onClick={() => setShowDelete(true)}
@@ -33,7 +37,7 @@ function JokeCard(props) {
           >
             X
           </button>
-          <p className="joke-text">{body}</p>
+          <p style={styles} className="joke-text">{body}</p>
           <div className="bottom-items">
             <Category category={category} />
             <div className="buttons">

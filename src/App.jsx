@@ -3,9 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { ThemeContext } from './Context';
 import NewJokeForm from './components/NewJokeForm';
 import Nav from './components/Nav';
-import TagFilters from './components/TagFilters';
-import ThemeButton from './components/ThemeButton';
 import MainArea from './components/MainArea';
+import Footer from './components/Footer';
 
 function App() {
   const [jokes, setJokes] = useState(null);
@@ -61,10 +60,7 @@ function App() {
           category={category}
           fetchNewJokes={() => fetchNewJokes()}
         />
-        <footer className="footer">
-          <ThemeButton setDarkMode={setDarkMode} />
-          <TagFilters setCategory={setCategory} />
-        </footer>
+        <Footer setDarkMode={setDarkMode} setCategory={setCategory} />
       </div>
     </ThemeContext.Provider>
   );

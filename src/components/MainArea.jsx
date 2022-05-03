@@ -1,11 +1,13 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import Switch from './Switch';
 import FillerCards from './FillerCards';
+import { ThemeContext } from '../Context';
 
 function MainArea(props) {
   const { jokes, category, fetchNewJokes } = props;
+  const darkMode = useContext(ThemeContext);
 
   function makeCards() {
     if (Array.isArray(jokes)) {
@@ -34,8 +36,13 @@ function MainArea(props) {
     );
   }
 
+  // Sets colors for darkmode if turned on
+  const styles = darkMode
+    ? { backgroundColor: '#434454', borderColor: 'white', color: 'white' }
+    : null;
+
   return (
-    <main className="joke-container">
+    <main style={styles} className="joke-container">
       {jokes ? makeCards(category) : <FillerCards />}
     </main>
   );

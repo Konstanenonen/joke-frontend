@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import JokeForm from './JokeForm';
 import JokeCard from './JokeCard';
+import { ThemeContext } from '../Context';
 
 function Switch(props) {
   const {
@@ -12,9 +13,14 @@ function Switch(props) {
     fetchNewJokes,
   } = props;
   const [isEdited, setIsEdited] = useState(false);
+  const darkMode = useContext(ThemeContext);
+
+  const styles = darkMode
+    ? { backgroundColor: 'black', color: 'white', borderColor: 'white' }
+    : null;
 
   return (
-    <div>
+    <div style={styles}>
       {isEdited ? (
         <JokeForm
           id={id}

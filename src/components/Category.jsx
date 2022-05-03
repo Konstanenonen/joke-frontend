@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../Context';
 
 function Category(props) {
   const { category } = props;
+  const darkMode = useContext(ThemeContext);
 
   function returnColor() {
     let color;
@@ -26,6 +28,7 @@ function Category(props) {
   const styles = {
     color: returnColor(),
     borderColor: returnColor(),
+    backgroundColor: darkMode && 'white',
   };
 
   return (
