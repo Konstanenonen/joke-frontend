@@ -39,6 +39,7 @@ function JokeCard(props) {
             className="delete-button"
             onClick={() => setShowDelete(true)}
             type="button"
+            style={font}
           >
             X
           </button>
