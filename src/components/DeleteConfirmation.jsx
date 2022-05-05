@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
 import priority from '../images/priority.png';
+import priorityWhite from '../images/priority_white.png';
 import { FontContext, ThemeContext } from '../Context';
 
 function DeleteConfirmation(props) {
@@ -35,7 +36,7 @@ function DeleteConfirmation(props) {
           No, go back
         </button>
       </div>
-      <img height={40} src={priority} alt="exclamation mark" />
+      {darkMode ? <img src={priorityWhite} alt="Exclamation mark" /> : <img height={40} src={priority} alt="Exclamation mark" /> }
     </div>
   );
 }
