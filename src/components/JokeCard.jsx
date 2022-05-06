@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { FontContext, ThemeContext } from '../Context';
 import pen from '../images/pen.png';
 import Category from './Category';
@@ -13,8 +13,9 @@ function JokeCard(props) {
     body,
     toggleEdit,
     fetchNewJokes,
+    showDelete,
+    setShowDelete,
   } = props;
-  const [showDelete, setShowDelete] = useState(false);
   const darkMode = useContext(ThemeContext);
   const boringFont = useContext(FontContext);
 

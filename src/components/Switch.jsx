@@ -13,6 +13,7 @@ function Switch(props) {
     fetchNewJokes,
   } = props;
   const [isEdited, setIsEdited] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
   const darkMode = useContext(ThemeContext);
 
   const styles = darkMode
@@ -20,7 +21,7 @@ function Switch(props) {
     : null;
 
   return (
-    <div style={styles}>
+    <div style={styles} className={showDelete ? 'shake' : ''}>
       {isEdited ? (
         <JokeForm
           id={id}
@@ -38,6 +39,8 @@ function Switch(props) {
           body={body}
           toggleEdit={() => setIsEdited((prevState) => !prevState)}
           fetchNewJokes={fetchNewJokes}
+          showDelete={showDelete}
+          setShowDelete={setShowDelete}
         />
       )}
     </div>
