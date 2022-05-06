@@ -354,10 +354,18 @@ form > ul > li {
 	.context-buttons {
 		margin: 20px;
 	}
+
+	.joke-container {
+		padding: 8px;
+	}
 }
 
 @media screen and (max-width: 370px) {
 	.hide {
 		display: none;
+	}
+
+	.joke-container {
+		padding: 2px;
 	}
 }
