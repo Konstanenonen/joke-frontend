@@ -19,9 +19,7 @@ function DeleteConfirmation(props) {
       });
   }
 
-  const styles = darkMode
-    ? { backgroundColor: '#01020a', color: 'white' }
-    : null;
+  const styles = darkMode ? { color: 'white' } : null;
 
   const font = boringFont ? { fontFamily: 'Roboto', fontWeight: 'bold' } : null;
 

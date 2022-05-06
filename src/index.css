@@ -313,6 +313,7 @@ form > ul > li {
 }
 
 .context-buttons {
+	background-color: rgb(172, 137, 11);
 	width: 180px;
 	justify-content: center;
 	border: 1px solid black;
