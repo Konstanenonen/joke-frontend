@@ -355,3 +355,9 @@ form > ul > li {
 		margin: 20px;
 	}
 }
+
+@media screen and (max-width: 370px) {
+	.hide {
+		display: none;
+	}
+}

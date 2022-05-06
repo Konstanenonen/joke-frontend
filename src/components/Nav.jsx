@@ -29,7 +29,7 @@ function Nav(props) {
     <nav style={{ ...styles, ...font }} className="nav">
       <h1 onClick={fetchNewJokes}>Joke App</h1>
       <form className="search-form" onSubmit={searchById}>
-        <label htmlFor="id-search">Search by id</label>
+        <label className="hide" htmlFor="id-search">Search by id</label>
         <input
           onChange={(event) => setSearchId(event.target.value)}
           value={searchId}
