@@ -69,11 +69,11 @@ button:hover {
   }
 
   30%, 50%, 70% {
-    transform: translate3d(-3px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
   }
 
   40%, 60% {
-    transform: translate3d(3px, 0, 0);
+    transform: translate3d(2px, 0, 0);
   }
 }
 
@@ -393,9 +393,5 @@ form > ul > li {
 @media screen and (max-width: 370px) {
 	.hide {
 		display: none;
-	}
-
-	.joke-container {
-		padding: 2px;
 	}
 }
