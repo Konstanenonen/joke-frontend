@@ -80,6 +80,7 @@ function JokeForm(props) {
             type="textfie"
             rows={5}
             style={font}
+            className="card-textfield"
             required
           />
         </li>

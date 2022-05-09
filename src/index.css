@@ -351,6 +351,10 @@ form > ul > li {
 	flex-direction: column;
 }
 
+.card-textfield {
+	resize: none;
+}
+
 @media screen and (max-width: 900px) {
 	.App {
 		grid: "nav" 150px
