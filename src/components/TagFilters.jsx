@@ -7,6 +7,7 @@ function TagFilters(props) {
   const [activeFilter, setActiveFilter] = useState(null);
   const boringFont = useContext(FontContext);
 
+  // sets which category of jokes is shown on the app
   function handleClick(category) {
     setCategory(category);
     setActiveFilter(category);

@@ -47,6 +47,8 @@ function App() {
       });
   }, [jokeId]);
 
+  // This function is passed to child elements for enabling
+  // them to fetch newest jokes from db
   function fetchNewJokes() {
     setFetchAmount((prevState) => prevState + 1);
   }

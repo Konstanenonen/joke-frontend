@@ -6,6 +6,7 @@ function Category(props) {
   const { category } = props;
   const darkMode = useContext(ThemeContext);
 
+  // Configures specific colors for all categories
   function returnColor() {
     let color;
     switch (category) {

@@ -11,6 +11,7 @@ function Nav(props) {
   const darkMode = useContext(ThemeContext);
   const boringFont = useContext(FontContext);
 
+  // Searches the specific joke from the db
   function searchById(event) {
     event.preventDefault();
 

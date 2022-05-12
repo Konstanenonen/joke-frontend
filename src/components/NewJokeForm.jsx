@@ -35,6 +35,7 @@ function NewJokeForm(props) {
     }));
   }
 
+  // Adds new joke to the db
   function handleSubmit(event) {
     event.preventDefault();
 

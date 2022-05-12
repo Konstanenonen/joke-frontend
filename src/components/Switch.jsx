@@ -4,6 +4,7 @@ import JokeForm from './JokeForm';
 import JokeCard from './JokeCard';
 import { ThemeContext } from '../Context';
 
+// This component works as a switch for joke cards and joke edit forms
 function Switch(props) {
   const {
     id,

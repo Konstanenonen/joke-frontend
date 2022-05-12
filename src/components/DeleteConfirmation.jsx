@@ -10,6 +10,7 @@ function DeleteConfirmation(props) {
   const darkMode = useContext(ThemeContext);
   const boringFont = useContext(FontContext);
 
+  // Delete operation that removes the specific joke from db
   function deletePost() {
     axios
       .delete(`https://joke-rest-api.herokuapp.com/api/delete/${id}`)

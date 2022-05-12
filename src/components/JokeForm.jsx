@@ -41,6 +41,7 @@ function JokeForm(props) {
     }));
   }
 
+  // submitting the form saves the changes to the joke in db
   function handleSubmit(event) {
     event.preventDefault();
 
