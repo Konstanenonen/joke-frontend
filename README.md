@@ -12,6 +12,10 @@ Olen lisännyt sovellukseen ominaisuuksia, jotka toteutuvat täysin itsenäisest
 
 Näiden lisäksi sovelluksen alapalkista löytyy myös kategorian filtteripainikkeet. Näiden avulla voidaan määrittää minkä kategorian vitsejä selataan (huom. näihin kuuluu myös "All jokes" kategoria kaikkien vitsien katsomiseen). Tämäkään ominaisuus ei ota yhteyttä tietokantaan, vaan filtteröi esille halutut vitsit täysin itsenäisesti frontend-puolella.
 
+### Tyylikirjastot
+
+Olen käyttänyt projektissani css:n omia layout-malleja, flexbox ja grid, jotka käytännössä korvaavat tyylikirjaston käyttämisen. Näiden layout-mallien avulla olen onnistunut tekemään projektistani responsiivisen kaiken kokoisilla ruuduilla, jonka esimerkiksi Bootsrap hoitaa ohjelmoijan puolesta. Sen lisäksi näin hyvin paljon vaivaa kaikkien komponenttien tyylittelyyn puhtaalla css:llä, koska se on mielestäni hauskempaa ja opettaa mielestäni enemmän, kuin esimerkiksi Bootsrapin valmiiden tyylien käyttäminen. Mielestäni olen nähnyt projektin ulkoasun hiomiseen paljon enemmän vaivaa, kuin mitä tehtävä olisi vaatinut (css-tiedostoni pituus on yli 400-riviä) ja ansaitsen mielestäni projektipisteen tästä tyylittelystä, vaikka en ole Bootsrappia tai vastaavaa käyttänyt.
+
 ### Tulevaisuuden kehitysmahdollisuudet
 
 Voisi olla siistiä lisätä käyttäjätiliominaisuus sovellukseen, jotta jokaisella käyttäjällä voisi olla omat henkilökohtaiset vitsit. Tämä kuitenkin vaatisi muutoksia ensimmäisenä kehittämääni rest apiin ennen fronttia.
